@@ -1642,8 +1642,11 @@ section,
 }
 
 .contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
 .contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form input[type=email]::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
@@ -1664,18 +1667,35 @@ section,
 
 .contact .php-email-form button[type=submit]:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+  transition: 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
 }
 
-.contact .php-email-form button[type=submit]:hover {
-  background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+.contact .php-email-form button[type=submit] {
+  color: var(--default-color);
+  background: var(--accent-color);
+  font-weight: 400;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 40px;
+  border: 0;
+  border-radius: 4px;
+  transition: 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .contact .php-email-form button[type=submit]:hover {
   background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+  transition: 0.5s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /*--------------------------------------------------------------
