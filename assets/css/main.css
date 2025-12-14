@@ -168,19 +168,67 @@ body {
 
 .btn-order {
   display: inline-block;
-  background-color: #444;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #ff6b3d, #ff3c7d);
+  color: #0f0f0f;
+  padding: 12px 22px;
+  border-radius: 10px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: 0.35s;
+  box-shadow: 0 8px 28px rgba(255, 90, 70, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .btn-order:hover {
-  background-color: #666;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(255, 90, 70, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color: #0b0b0b;
 }
 
+.pain-block {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 108, 61, 0.12), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba(255, 60, 125, 0.14), transparent 40%),
+              var(--surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.pain-block h3 {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.pain-block p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+.pain-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.pain-bullets li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.pain-bullets .icon {
+  color: #ff7a4f;
+  font-size: 18px;
+  line-height: 1.4;
+}
 
 .form-container label {
   display: block;
@@ -222,22 +270,24 @@ body {
 .btn-get-started {
   display: inline-block;
   padding: 14px 50px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #111, #444);
-  color: #fff;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6b3d, #ff3c7d);
+  color: #0f0f0f;
   text-transform: uppercase;
   letter-spacing: 1px;
-  border: 2px solid #fff;
+  border: none;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 800;
   text-align: center;
   cursor: pointer;
-  transition: 0.5s;
+  transition: 0.35s;
+  box-shadow: 0 10px 35px rgba(255, 90, 70, 0.35), 0 0 0 2px rgba(255, 255, 255, 0.06);
 }
 
 .btn-get-started:hover {
-  background: linear-gradient(135deg, #222, #666);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 45px rgba(255, 90, 70, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.08);
+  color: #0b0b0b;
 }
 
 .price-section {
@@ -1610,6 +1660,18 @@ section,
   transition: 0.5s;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 10%);
 }
 
 .contact .php-email-form button[type=submit]:hover {
