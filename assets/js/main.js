@@ -145,17 +145,9 @@
   const triggers = document.querySelectorAll('.order-trigger');
   const track = modal.querySelector('.order-carousel__track');
   const arrows = modal.querySelectorAll('.order-carousel__arrow');
-  let modalHistoryPushed = false;
 
   const openModal = (e) => {
     if (e) e.preventDefault();
-    if (!modal.classList.contains('open')) {
-      // Добавляем состояние в историю, чтобы кнопка "Назад" сначала закрывала попап
-      if (window.history && window.history.pushState) {
-        window.history.pushState({ orderModal: true }, '', '#order');
-        modalHistoryPushed = true;
-      }
-    }
     modal.classList.add('open');
     document.body.classList.add('modal-open');
   };
@@ -180,14 +172,6 @@
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) {
-      closeModal();
-    }
-  });
-
-  // Обрабатываем нажатие кнопки "Назад" в браузере/на телефоне:
-  // если попап открыт, сначала закрываем его, а не уходим со страницы
-  window.addEventListener('popstate', () => {
-    if (modal.classList.contains('open')) {
       closeModal();
     }
   });
