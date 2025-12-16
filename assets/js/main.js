@@ -135,6 +135,92 @@
 
 })();
 
+// Order modal & slider
+(function() {
+  const modal = document.getElementById('orderModal');
+  if (!modal) return;
+
+  const dialog = modal.querySelector('.order-modal__dialog');
+  const closeBtn = modal.querySelector('.order-modal__close');
+  const triggers = document.querySelectorAll('.order-trigger');
+  const track = modal.querySelector('.order-carousel__track');
+  const arrows = modal.querySelectorAll('.order-carousel__arrow');
+
+  const openModal = (e) => {
+    if (e) e.preventDefault();
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+  };
+
+  triggers.forEach(btn => btn.addEventListener('click', openModal));
+  closeBtn?.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  modal.addEventListener('contextmenu', (e) => {
+    if (e.target.closest('.order-carousel')) {
+      e.preventDefault();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  if (track) {
+    const getStep = () => {
+      const item = track.querySelector('.order-carousel__item');
+      return item ? item.getBoundingClientRect().width + 14 : track.clientWidth * 0.8;
+    };
+
+    arrows.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dir = Number(btn.dataset.dir || 1);
+        track.scrollBy({ left: getStep() * dir, behavior: 'smooth' });
+      });
+    });
+
+    let isDragging = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const startDrag = (e) => {
+      isDragging = true;
+      startX = e.pageX;
+      scrollLeft = track.scrollLeft;
+      track.classList.add('dragging');
+      track.setPointerCapture(e.pointerId);
+    };
+
+    const onDrag = (e) => {
+      if (!isDragging) return;
+      const dx = e.pageX - startX;
+      track.scrollLeft = scrollLeft - dx;
+    };
+
+    const stopDrag = (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      track.releasePointerCapture(e.pointerId);
+      track.classList.remove('dragging');
+    };
+
+    track.addEventListener('pointerdown', startDrag);
+    track.addEventListener('pointermove', onDrag);
+    track.addEventListener('pointerup', stopDrag);
+    track.addEventListener('pointerleave', stopDrag);
+  }
+})();
+
 function openForm() {
   document.getElementById('formOverlay').style.display = 'flex';
 }
