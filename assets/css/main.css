@@ -178,7 +178,10 @@ body {
   width: 100%;
   padding: 32px 28px 26px;
   color: #f8f8f8;
-  overflow: hidden;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .order-modal__close {
@@ -246,6 +249,11 @@ body {
 .order-modal__btn:hover {
   transform: translateY(-1px);
   filter: brightness(1.05);
+}
+
+.order-modal__btn--wa:hover,
+.order-modal__btn--tg:hover {
+  color: #ff3c3d;
 }
 
 .order-modal__btn:focus-visible {
