@@ -146,15 +146,38 @@
   const track = modal.querySelector('.order-carousel__track');
   const arrows = modal.querySelectorAll('.order-carousel__arrow');
 
+  let modalHistoryPushed = false;
+
   const openModal = (e) => {
     if (e) e.preventDefault();
+
+    // Добавляем состояние в историю, чтобы аппаратная кнопка "Назад" сначала закрывала попап
+    if (!modal.classList.contains('open') && window.history && window.history.pushState) {
+      window.history.pushState({ orderModal: true }, '', window.location.href);
+      modalHistoryPushed = true;
+    }
+
     modal.classList.add('open');
     document.body.classList.add('modal-open');
   };
 
-  const closeModal = () => {
+  const closeModal = (options = {}) => {
+    const { fromPopstate = false } = options;
+
+    if (!modal.classList.contains('open')) return;
+
     modal.classList.remove('open');
     document.body.classList.remove('modal-open');
+
+    // Если попап закрываем руками (крестик/клик по фону/ESC), откатываем добавленное состояние истории
+    if (modalHistoryPushed) {
+      if (!fromPopstate && window.history && window.history.back) {
+        modalHistoryPushed = false;
+        window.history.back();
+      } else {
+        modalHistoryPushed = false;
+      }
+    }
   };
 
   triggers.forEach(btn => btn.addEventListener('click', openModal));
@@ -173,6 +196,14 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) {
       closeModal();
+    }
+  });
+
+  // Аппаратная кнопка "Назад" на Android/iOS и кнопка "Назад" браузера:
+  // если попап открыт и для него был добавлен pushState, сначала закрываем его, не уходим со страницы
+  window.addEventListener('popstate', () => {
+    if (modal.classList.contains('open') && modalHistoryPushed) {
+      closeModal({ fromPopstate: true });
     }
   });
 
