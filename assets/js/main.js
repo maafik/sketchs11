@@ -368,3 +368,18 @@ window.addEventListener('popstate', function (event) {
   closeForm(); // При нажатии кнопки "Назад" скрываем форму
 });
 
+// Яндекс.Метрика: отслеживание клика по ВТОРОЙ кнопке "Заказать эскиз"
+(function () {
+  const orderButtons = document.querySelectorAll('.btn-get-started.order-trigger');
+  if (orderButtons.length < 2) return;
+
+  const secondOrderButton = orderButtons[1];
+
+  if (!secondOrderButton) return;
+
+  secondOrderButton.addEventListener('click', function () {
+    if (typeof ym === 'function') {
+      ym(105430483, 'reachGoal', 'order_second_button');
+    }
+  });
+})();
