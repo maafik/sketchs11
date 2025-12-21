@@ -129,6 +129,16 @@ h6 {
   animation: php-email-form-loading 1s linear infinite;
 }
 
+@keyframes php-email-form-loading {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -438,70 +448,6 @@ body.modal-open {
   font-weight: bold;
 }
 
-.btn-order {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff6b3d, #ff3c7d);
-  color: #0f0f0f;
-  padding: 12px 22px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  transition: 0.35s;
-  box-shadow: 0 8px 28px rgba(255, 90, 70, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
-}
-
-.btn-order:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 36px rgba(255, 90, 70, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
-  color: #0b0b0b;
-}
-
-.pain-block {
-  background: radial-gradient(circle at 20% 20%, rgba(255, 108, 61, 0.12), transparent 35%),
-              radial-gradient(circle at 80% 0%, rgba(255, 60, 125, 0.14), transparent 40%),
-              var(--surface-color);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 18px;
-  padding: 28px 26px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-}
-
-.pain-block h3 {
-  font-size: 26px;
-  margin-bottom: 14px;
-}
-
-.pain-block p {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 10px;
-  line-height: 1.55;
-}
-
-.pain-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.pain-bullets li {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  padding: 10px 12px;
-}
-
-.pain-bullets .icon {
-  color: #ff7a4f;
-  font-size: 18px;
-  line-height: 1.4;
-}
-
 .form-container label {
   display: block;
   margin: 4px 0 2px; /* Уменьшены отступы */
@@ -539,6 +485,25 @@ body.modal-open {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+.btn-order {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b3d, #ff3c7d);
+  color: #0f0f0f;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: 0.35s;
+  box-shadow: 0 8px 28px rgba(255, 90, 70, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.btn-order:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 36px rgba(255, 90, 70, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color: #0b0b0b;
+}
+
 .btn-get-started {
   display: inline-block;
   padding: 14px 50px;
@@ -560,20 +525,6 @@ body.modal-open {
   transform: translateY(-1px);
   box-shadow: 0 14px 45px rgba(255, 90, 70, 0.5), 0 0 0 2px rgba(255, 255, 255, 0.08);
   color: #0b0b0b;
-}
-
-.price-section {
-  margin-top: 20px;
-  color: #ccc;
-}
-
-.price-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.price-section li {
-  margin: 10px 0;
 }
 
 .green-button {
@@ -613,17 +564,6 @@ textarea:focus {
   outline: none;
 }
 
-@keyframes php-email-form-loading {
-  0% {
-      transform: rotate(0deg);
-  }
-
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
-/* Мобильные устройства */
 @media screen and (max-width: 768px) {
   .form-container {
       padding: 15px;
@@ -650,14 +590,13 @@ textarea:focus {
   }
 }
 
-/* Очень маленькие экраны */
 @media screen and (max-width: 480px) {
   .form-container {
       padding: 12px;
   }
 
   .form-container label {
-      margin: 2px 0 2px;
+      margin: 4px 0 2px; /* Уменьшены отступы */
   }
 
   .form-container input,
@@ -675,8 +614,114 @@ textarea:focus {
       font-size: 12px;
       padding: 8px; /* Отступы внутри textarea увеличены */
   }
+
+  .work-step-card {
+      padding: 22px 16px 18px;
+  }
+
+  .work-step-badge {
+      left: 14px;
+      width: 34px;
+      height: 34px;
+      font-size: 15px;
+  }
 }
 
+.pain-block {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 108, 61, 0.12), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba(255, 60, 125, 0.14), transparent 40%),
+              var(--surface-color);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 28px 26px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.pain-block h3 {
+  font-size: 26px;
+  margin-bottom: 14px;
+}
+
+.pain-block p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+.pain-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.pain-bullets li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.pain-bullets .icon {
+  color: #ff7a4f;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.work-process {
+  position: relative;
+}
+
+.work-step-card {
+  position: relative;
+  height: 100%;
+  padding: 26px 20px 22px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 108, 61, 0.10), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba(255, 60, 125, 0.12), transparent 40%),
+              rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  transition: 0.35s;
+}
+
+.work-step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.45);
+}
+
+.work-step-badge {
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #0b0b0b;
+  background: linear-gradient(135deg, #ff6b3d, #ff3c7d);
+  box-shadow: 0 10px 30px rgba(255, 90, 70, 0.35), 0 0 0 2px rgba(255, 255, 255, 0.06);
+}
+
+.work-step-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.work-step-text {
+  margin-top: 8px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -1968,11 +2013,4 @@ section,
   transition: 0.5s;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
