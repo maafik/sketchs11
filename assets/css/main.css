@@ -265,7 +265,6 @@ body {
   filter: brightness(1.05);
 }
 
-.order-modal__btn--wa:hover,
 .order-modal__btn--tg:hover {
   color: #ff3c3d;
 }
@@ -273,11 +272,6 @@ body {
 .order-modal__btn:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 3px;
-}
-
-.order-modal__btn--wa {
-  background: linear-gradient(135deg, #38ef7d, #11998e);
-  box-shadow: 0 10px 28px rgba(17, 153, 142, 0.35);
 }
 
 .order-modal__btn--tg {
