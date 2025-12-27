@@ -2173,14 +2173,6 @@ section,
   }
 }
 
-.mfb-gallery__nav--prev:hover .mfb-gallery__icon {
-  transform: translateX(-4px);
-}
-
-.mfb-gallery__nav--next:hover .mfb-gallery__icon {
-  transform: translateX(4px);
-}
-
 .mfb-phone {
   position: relative;
 }
