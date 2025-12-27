@@ -2439,7 +2439,8 @@ section,
 
 .mfb-cta__btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 30px -18px color-mix(in srgb, var(--accent-color), transparent 35%);
+  background: #fff;
+  color: var(--accent-color);
 }
 
 @media (max-width: 575px) {
