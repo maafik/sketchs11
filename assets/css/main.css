@@ -279,6 +279,54 @@ body {
   box-shadow: 0 10px 28px rgba(55, 174, 226, 0.35);
 }
 
+.order-modal__btn--wa {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 14px 18px;
+}
+
+.order-modal__btn--wa:hover {
+  color: #fff;
+}
+
+.order-modal__btn-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.order-modal__btn-main {
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+}
+
+.order-modal__btn-sub {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 2px;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.order-modal__btn-phone {
+  font-size: 10px;
+  opacity: 0.7;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
 .order-carousel {
   margin-top: 12px;
 }
@@ -377,6 +425,18 @@ body {
   text-align: center;
   color: rgba(255, 255, 255, 0.55);
   margin-top: 12px;
+}
+
+.order-modal__vpn-notice {
+  text-align: right;
+  margin-top: 8px;
+  padding-right: 8px;
+}
+
+.order-modal__vpn-text {
+  color: #ff0000;
+  font-size: 12px;
+  opacity: 0.8;
 }
 
 body.modal-open {
