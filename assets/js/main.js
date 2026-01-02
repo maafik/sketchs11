@@ -68,10 +68,10 @@
     window.addEventListener('load', () => {
       setTimeout(() => {
         preloader.classList.add('loaded');
-      }, 300);
+      }, 500);
       setTimeout(() => {
         preloader.remove();
-      }, 800);
+      }, 1000);
     });
   }
 
