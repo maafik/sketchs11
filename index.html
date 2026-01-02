@@ -165,6 +165,37 @@
       });
     </script>
 
+    <!-- Handmade Section -->
+    <section class="section" style="padding: 60px 0; background: #0a0a0a;">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-6">
+            <div class="handmade-image-wrapper">
+              <img id="handmadeImage" src="" alt="Ручная работа эскиза" class="img-fluid rounded" style="width: 100%; height: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5);" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="handmade-content">
+              <h3 style="color: #fff; font-size: 2rem; margin-bottom: 20px; font-weight: 700;">Каждая деталь — ручная работа</h3>
+              <p style="color: #ccc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+                Каждый эскиз рисуется от руки — от первой линии до финального штриха. Я прорабатываю каждую деталь, чтобы дизайн был гармоничным и точно соответствовал твоей идее.
+              </p>
+              <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                  <div style="color: #fff; font-weight: 600; margin-bottom: 8px;">✓ 100% ручная работа</div>
+                  <div style="color: #999; font-size: 0.9rem;">Каждая линия создана вручную</div>
+                </div>
+                <div style="flex: 1; min-width: 200px;">
+                  <div style="color: #fff; font-weight: 600; margin-bottom: 8px;">✓ Продуманные детали</div>
+                  <div style="color: #999; font-size: 0.9rem;">Каждый элемент согласован со стилем</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Gallery Section -->
     <section class="section" style="padding: 50px 0;">
       <div class="container" data-aos="fade-up" data-aos-delay="80">
@@ -307,37 +338,6 @@
     
   </main>
 
-  <!-- Handmade Section -->
-  <section class="section" style="padding: 60px 0; background: #0a0a0a;">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row align-items-center justify-content-center">
-        <div class="col-lg-6">
-          <div class="handmade-image-wrapper">
-            <img id="handmadeImage" src="" alt="Ручная работа эскиза" class="img-fluid rounded" style="width: 100%; height: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5);" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="handmade-content">
-            <h3 style="color: #fff; font-size: 2rem; margin-bottom: 20px; font-weight: 700;">Каждая деталь — ручная работа</h3>
-            <p style="color: #ccc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-              Никаких нейросетей и генераторов. Каждый эскиз рисуется от руки — от первой линии до финального штриха. Я прорабатываю каждую деталь, каждый фрагмент, чтобы дизайн был гармоничным и точно соответствовал твоей идее.
-            </p>
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-              <div style="flex: 1; min-width: 200px;">
-                <div style="color: #fff; font-weight: 600; margin-bottom: 8px;">✓ 100% ручная работа</div>
-                <div style="color: #999; font-size: 0.9rem;">Без использования ИИ и генераторов</div>
-              </div>
-              <div style="flex: 1; min-width: 200px;">
-                <div style="color: #fff; font-weight: 600; margin-bottom: 8px;">✓ Продуманные детали</div>
-                <div style="color: #999; font-size: 0.9rem;">Каждый элемент согласован с общим стилем</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <footer id="footer" class="footer">
 
     <div class="container">
@@ -444,7 +444,7 @@
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
-        // Загружаем изображение с задержкой 2 секунды
+        // Загружаем изображение с задержкой 1 секунду
         const handmadeImage = document.getElementById("handmadeImage");
         if (handmadeImage) {
           handmadeImage.src = "assets/img/gallery/123123123.jpg";
