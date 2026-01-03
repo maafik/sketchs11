@@ -42,37 +42,38 @@
 
   <!-- Google tag (gtag.js) - optimized loading -->
   <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0ZKS0X8JS6';
-        document.head.appendChild(script);
-        
-        script.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-0ZKS0X8JS6');
-        };
-      }, 2000); // Задержка 2 секунды после загрузки страницы
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0ZKS0X8JS6');
   </script>
+  <script src="https://www.googletagmanager.com/gtag/js?id=G-0ZKS0X8JS6"></script>
 
   <!-- Google Ads Conversion Tracking -->
   <script>
   function gtag_report_conversion(url) {
+    console.log('Conversion function called for URL:', url);
     var callback = function () {
+      console.log('Conversion callback executed');
       if (typeof(url) != 'undefined') {
         window.location = url;
       }
     };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17846995280/Cr2oCLWYktwbENCSjr5C',
-        'value': 1.0,
-        'currency': 'USD',
-        'event_callback': callback
-    });
+    
+    // Check if gtag is available
+    if (typeof gtag === 'function') {
+      console.log('Sending conversion event...');
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17846995280/Cr2oCLWYktwbENCSjr5C',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+    } else {
+      console.error('gtag function is not available!');
+      // Fallback: redirect directly
+      callback();
+    }
     return false;
   }
   </script>
