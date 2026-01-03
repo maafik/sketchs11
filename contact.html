@@ -38,12 +38,22 @@
 
   <!-- Google tag (gtag.js) - optimized loading -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-0ZKS0X8JS6');
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0ZKS0X8JS6';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-0ZKS0X8JS6');
+        };
+      }, 2000); // Задержка 2 секунды после загрузки страницы
+    });
   </script>
-  <script src="https://www.googletagmanager.com/gtag/js?id=G-0ZKS0X8JS6"></script>
 
   <!-- Google Ads Conversion Tracking -->
   <script>
