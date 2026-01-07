@@ -126,7 +126,7 @@ function gtag_report_conversion(url) {
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="#contact-form">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -399,6 +399,12 @@ function gtag_report_conversion(url) {
                           placeholder="Tell me about your tattoo idea: style, size, placement, any specific elements you want..."></textarea>
               </div>
 
+              <div class="mb-3">
+                <label for="photo" class="form-label">Attach Reference Photo (optional)</label>
+                <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                <small class="form-text text-muted">You can attach a reference image to help me understand your idea better</small>
+              </div>
+
               <div class="text-center">
                 <button type="submit" class="btn-submit">
                   <span class="btn-submit-text">Send</span>
@@ -597,6 +603,8 @@ function gtag_report_conversion(url) {
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const idea = document.getElementById('idea').value.trim();
+        const photoInput = document.getElementById('photo');
+        const photo = photoInput.files[0];
 
         if (!name || !email || !idea) {
           showMessage('Please fill in all required fields.', 'error');
@@ -609,12 +617,17 @@ function gtag_report_conversion(url) {
         submitBtn.disabled = true;
 
         // Prepare message for Telegram
-        const telegramMessage = `🎨 *New Tattoo Order Request*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💭 *Idea:* ${idea}`;
+        let telegramMessage = `🎨 *New Tattoo Order Request*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💭 *Idea:* ${idea}`;
+        
+        if (photo) {
+          telegramMessage += `\n📎 *File:* ${photo.name} (${(photo.size / 1024).toFixed(1)}KB)`;
+        }
         
         // Send to Telegram
         const telegramUrl = `https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendMessage`;
         const chatId = '1076512275';
         
+        // First send text message
         fetch(telegramUrl, {
           method: 'POST',
           headers: {
@@ -629,11 +642,26 @@ function gtag_report_conversion(url) {
         .then(response => response.json())
         .then(data => {
           if (data.ok) {
-            showMessage('Thank you! Your request has been sent successfully. I will contact you soon!', 'success');
-            form.reset();
+            // If there's a photo, send it separately
+            if (photo) {
+              return sendPhotoToTelegram(photo, chatId);
+            } else {
+              return Promise.resolve();
+            }
           } else {
             throw new Error('Failed to send message');
           }
+        })
+        .then(() => {
+          showMessage('Thank you! Your request has been sent successfully. I will contact you soon!', 'success');
+          form.reset();
+          
+          // Google Ads conversion tracking
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17846995280/1K3KCK3got4bENCSjr5C',
+            'value': 1.0,
+            'currency': 'USD'
+          });
         })
         .catch(error => {
           console.error('Error:', error);
@@ -646,6 +674,18 @@ function gtag_report_conversion(url) {
           submitBtn.disabled = false;
         });
       });
+
+      function sendPhotoToTelegram(photo, chatId) {
+        const formData = new FormData();
+        formData.append('chat_id', chatId);
+        formData.append('photo', photo);
+        formData.append('caption', 'Reference photo for tattoo order');
+
+        return fetch(`https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendPhoto`, {
+          method: 'POST',
+          body: formData
+        });
+      }
 
       function showMessage(text, type) {
         formMessage.textContent = text;
