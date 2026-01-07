@@ -643,7 +643,7 @@ function gtag_report_conversion(url) {
         .then(data => {
           if (data.ok) {
             // If there's a photo, send it separately
-            if (photo) {
+            if (photo && photo.size > 0) {
               return sendPhotoToTelegram(photo, chatId);
             } else {
               return Promise.resolve();
@@ -676,6 +676,10 @@ function gtag_report_conversion(url) {
       });
 
       function sendPhotoToTelegram(photo, chatId) {
+        if (!photo || photo.size === 0) {
+          return Promise.resolve();
+        }
+        
         const formData = new FormData();
         formData.append('chat_id', chatId);
         formData.append('photo', photo);
@@ -684,6 +688,18 @@ function gtag_report_conversion(url) {
         return fetch(`https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendPhoto`, {
           method: 'POST',
           body: formData
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (!data.ok) {
+            throw new Error('Failed to send photo to Telegram');
+          }
+          return data;
         });
       }
 
