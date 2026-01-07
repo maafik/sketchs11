@@ -655,13 +655,6 @@ function gtag_report_conversion(url) {
         .then(() => {
           showMessage('Successfully sent! We will contact you soon.', 'success');
           form.reset();
-          
-          // Google Ads conversion tracking
-          gtag('event', 'conversion', {
-            'send_to': 'AW-17846995280/1K3KCK3got4bENCSjr5C',
-            'value': 1.0,
-            'currency': 'USD'
-          });
         })
         .catch(error => {
           console.error('Error:', error);
