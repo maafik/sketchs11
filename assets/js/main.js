@@ -161,7 +161,7 @@
   const openModal = (e) => {
     if (e) e.preventDefault();
 
-    // Добавляем состояние в историю, чтобы аппаратная кнопка "Назад" сначала закрывала попап
+    // Add state to history so hardware back button first closes popup
     if (!modal.classList.contains('open') && window.history && window.history.pushState) {
       window.history.pushState({ orderModal: true }, '', window.location.href);
       modalHistoryPushed = true;
@@ -179,7 +179,7 @@
     modal.classList.remove('open');
     document.body.classList.remove('modal-open');
 
-    // Если попап закрываем руками (крестик/клик по фону/ESC), откатываем добавленное состояние истории
+    // If popup is closed manually (X/background click/ESC), rollback added history state
     if (modalHistoryPushed) {
       if (!fromPopstate && window.history && window.history.back) {
         modalHistoryPushed = false;
@@ -209,8 +209,8 @@
     }
   });
 
-  // Аппаратная кнопка "Назад" на Android/iOS и кнопка "Назад" браузера:
-  // если попап открыт и для него был добавлен pushState, сначала закрываем его, не уходим со страницы
+  // Hardware back button on Android/iOS and browser back button:
+  // if popup is open and pushState was added for it, first close it, don't leave page
   window.addEventListener('popstate', () => {
     if (modal.classList.contains('open') && modalHistoryPushed) {
       closeModal({ fromPopstate: true });
@@ -298,7 +298,7 @@ if (orderFormEl) orderFormEl.addEventListener('submit', async function (e) {
   const form = e.target;
   const formData = new FormData(form);
 
-  let text = "Новый заказ:\n";
+  let text = "New order:\n";
   for (const [key, value] of formData.entries()) {
     if (value instanceof File || value === "") continue;
     text += `${key}: ${value}\n`;
@@ -332,25 +332,25 @@ if (orderFormEl) orderFormEl.addEventListener('submit', async function (e) {
 
     document.getElementById('formContainer').innerHTML = `
       <div style="text-align:center; padding: 30px;">
-        <h2>Спасибо за обращение!</h2>
-        <p>Для более быстрого ответа напишите "+" в мессенджер:</p>
+        <h2>Thank you for your inquiry!</h2>
+        <p>For a faster response, write "+" in messenger:</p>
         <p><a href="https://t.me/Irinasketchs?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%8D%D1%81%D0%BA%D0%B8%D0%B7." target="_blank">Telegram</a></p>
       </div>
     `;
   } catch (error) {
-    alert("Ошибка отправки: " + error.message);
+    alert("Sending error: " + error.message);
   }
 });
 
-// Функция для открытия формы
+// Function to open form
 function openForm() {
   const formOverlay = document.getElementById('formOverlay');
   if (!formOverlay) return;
   formOverlay.style.display = 'flex';
-  history.pushState(null, '', location.href); // Добавляем в историю браузера
+  history.pushState(null, '', location.href); // Add to browser history
 }
 
-// Функция для перехода ко второму шагу
+// Function to go to second step
 function nextForm() {
   const formOverlay = document.getElementById('formOverlay');
   const nextFormOverlay = document.getElementById('nextFormOverlay');
@@ -358,7 +358,7 @@ function nextForm() {
   if (nextFormOverlay) nextFormOverlay.style.display = 'flex';
 }
 
-// Функция для закрытия формы
+// Function to close form
 function closeForm() {
   const formOverlay = document.getElementById('formOverlay');
   const nextFormOverlay = document.getElementById('nextFormOverlay');
@@ -368,23 +368,23 @@ function closeForm() {
   if (thankYouOverlay) thankYouOverlay.style.display = 'none';
 }
 
-// Закрытие формы при клике на фон
+// Close form on background click
 function closeOnBackground(event) {
   if (event.target.classList.contains('overlay')) {
     closeForm();
   }
 }
 
-// Закрытие формы при нажатии клавиши Escape
+// Close form on Escape key press
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeForm();
   }
 });
 
-// Перехват кнопки "Назад" браузера
+// Intercept browser back button
 window.addEventListener('popstate', function (event) {
-  closeForm(); // При нажатии кнопки "Назад" скрываем форму
+  closeForm(); // When back button is pressed, hide form
 });
 
 (function() {
@@ -410,32 +410,32 @@ window.addEventListener('popstate', function (event) {
     {
       id: 1,
       image: 'assets/img/gallery/gallery-1.jpg',
-      title: 'Геометрический нео-брутализм',
-      description: 'Голова волка, выполненная с использованием чётких геометрических форм и резких линий, подчёркивающих дикость образа',
+      title: 'Geometric Wolf Head',
+      description: 'Wolf head created using clear geometric shapes and sharp lines emphasizing the wildness of the image',
     },
     {
       id: 2,
       image: 'assets/img/gallery/gallery-2.jpg',
-      title: 'Кибер-готика',
-      description: 'Футуристичный ворон с технологичными элементами и контрастным светом, создающий мрачный и загадочный образ',
+      title: 'Cyber Gothic',
+      description: 'Futuristic raven with technological elements and contrasting light, creating a dark and mysterious image',
     },
     {
       id: 3,
       image: 'assets/img/gallery/gallery-3.jpg',
-      title: 'Абстрактный дарк-сюрреализм',
-      description: 'Абстрактный череп с контрастными мазками и мрачной атмосферой, символизирующий жизнь и разрушение',
+      title: 'Abstract Dark Surrealism',
+      description: 'Abstract skull with contrasting strokes and dark atmosphere, symbolizing life and destruction',
     },
     {
       id: 4,
       image: 'assets/img/gallery/gallery-4.jpg',
-      title: 'Экспрессивный анимализм',
-      description: 'Динамичный образ медведя с резкими линиями и тёмными акцентами, передающий ярость и мощь',
+      title: 'Expressive Animalism',
+      description: 'Dynamic bear image with sharp lines and dark accents, conveying rage and power',
     },
     {
       id: 5,
       image: 'assets/img/gallery/gallery-5.jpg',
-      title: 'Хищный реализм',
-      description: 'Реалистичный образ волка с акцентом на взгляд и оскал, передающий силу, агрессию и первобытный инстинкт',
+      title: 'Predatory Realism',
+      description: 'Realistic wolf image with focus on gaze and snarl, conveying strength, aggression and primal instinct',
     },
   ];
 
@@ -454,7 +454,7 @@ window.addEventListener('popstate', function (event) {
       const dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'mfb-dot';
-      dot.setAttribute('aria-label', `Перейти к работе ${idx + 1}`);
+      dot.setAttribute('aria-label', `Go to work ${idx + 1}`);
       dot.addEventListener('click', () => {
         if (idx === currentIndex) return;
         setIndex(idx);

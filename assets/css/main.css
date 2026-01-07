@@ -450,7 +450,8 @@ body.modal-open {
   }
 
   .order-modal__actions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
 
   .order-carousel__track {
@@ -496,7 +497,7 @@ body.modal-open {
 }
 
 .form-container h2 {
-  margin: 0 0 10px; /* Уменьшены отступы */
+  margin: 0 0 10px; /* Reduced margins */
   text-align: center;
   font-size: 24px;
   font-weight: bold;
@@ -504,14 +505,14 @@ body.modal-open {
 
 .form-container label {
   display: block;
-  margin: 4px 0 2px; /* Уменьшены отступы */
+  margin: 4px 0 2px; /* Reduced margins */
   color: #ccc;
 }
 
 .form-container input, .form-container select, .form-container button {
   width: 100%;
-  padding: 14px; /* Увеличены отступы внутри элементов для комфортного ввода */
-  margin-bottom: 8px; /* Уменьшены отступы между полями */
+  padding: 14px; /* Increased padding inside elements for comfortable input */
+  margin-bottom: 8px; /* Reduced margins between fields */
   border-radius: 8px;
   border: none;
   outline: none;
@@ -604,11 +605,11 @@ body.modal-open {
 
 textarea {
   width: 100%;
-  height: 120px; /* Увеличена высота */
+  height: 120px; /* Increased height */
   resize: none;
   border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 10px; /* Увеличены отступы внутри textarea */
+  padding: 10px; /* Increased padding inside textarea */
   font-size: 14px;
   box-sizing: border-box;
 }
@@ -624,14 +625,14 @@ textarea:focus {
   }
 
   .form-container label {
-      margin: 4px 0 2px; /* Уменьшены отступы */
+      margin: 4px 0 2px; /* Reduced margins */
   }
 
   .form-container input,
   .form-container select,
   .form-container button {
-      padding: 12px; /* Увеличены отступы внутри элементов */
-      margin-bottom: 6px; /* Уменьшены отступы между элементами */
+      padding: 12px; /* Increased padding inside elements */
+      margin-bottom: 6px; /* Reduced margins between elements */
   }
 
   .form-container h2 {
@@ -639,8 +640,8 @@ textarea:focus {
   }
 
   textarea {
-      font-size: 14px; /* Размер шрифта как до изменений */
-      padding: 10px; /* Отступы внутри textarea увеличены */
+      font-size: 14px; /* Font size as before changes */
+      padding: 10px; /* Padding inside textarea increased */
   }
 }
 
@@ -650,14 +651,14 @@ textarea:focus {
   }
 
   .form-container label {
-      margin: 4px 0 2px; /* Уменьшены отступы */
+      margin: 4px 0 2px; /* Reduced margins */
   }
 
   .form-container input,
   .form-container select,
   .form-container button {
-      padding: 10px; /* Увеличены отступы внутри */
-      margin-bottom: 5px; /* Уменьшены отступы между элементами */
+      padding: 10px; /* Increased padding inside */
+      margin-bottom: 5px; /* Reduced margins between elements */
   }
 
   .form-container h2 {
@@ -666,7 +667,7 @@ textarea:focus {
 
   textarea {
       font-size: 12px;
-      padding: 8px; /* Отступы внутри textarea увеличены */
+      padding: 8px; /* Padding inside textarea increased */
   }
 
   .work-step-card {
@@ -1930,6 +1931,120 @@ section,
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
+.pricing-section {
+  padding: 60px 0;
+  background: var(--background-color);
+}
+
+.pricing-item {
+  background: transparent;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 30%);
+  position: relative;
+}
+
+.pricing-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-item.pricing-popular {
+  border-color: var(--accent-color);
+  box-shadow: 0 5px 20px color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-title {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.pricing-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.pricing-desc {
+  color: var(--default-color);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pricing-note {
+  margin-top: 30px;
+  padding: 15px;
+  background: color-mix(in srgb, var(--surface-color), var(--accent-color) 5%);
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.pricing-note p {
+  margin: 0;
+  font-size: 16px;
+  color: var(--default-color);
+}
+
+.pricing-note a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pricing-note a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile specific styles */
+.pricing-popular-mobile {
+  margin-bottom: 20px;
+}
+
+.pricing-popular-mobile .pricing-item {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .pricing-section {
+    padding: 60px 0;
+  }
+  
+  .pricing-item {
+    padding: 25px 20px;
+    margin-bottom: 15px;
+  }
+  
+  .pricing-title {
+    font-size: 20px;
+  }
+  
+  .pricing-price {
+    font-size: 28px;
+  }
+}
+
 .pricing .pricing-item {
   border-bottom: 1px dashed color-mix(in srgb, var(--default-color), transparent 60%);
   width: 100%;
@@ -2516,6 +2631,138 @@ section,
   }
 
   .mfb-cta__btn {
+    width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Contact Form Section
+--------------------------------------------------------------*/
+.contact-form-section {
+  padding: 80px 0;
+  background: var(--background-color);
+}
+
+.tattoo-order-form {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 40px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.form-label {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-control {
+  background: var(--background-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 40%);
+  color: var(--default-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.form-control::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+}
+
+.btn-submit {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--accent-color) 90%, white 10%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-submit-loading {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-message {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-message--success {
+  background: color-mix(in srgb, #28a745, var(--surface-color) 90%);
+  color: #28a745;
+  border: 1px solid color-mix(in srgb, #28a745, transparent 70%);
+}
+
+.form-message--error {
+  background: color-mix(in srgb, #dc3545, var(--surface-color) 90%);
+  color: #dc3545;
+  border: 1px solid color-mix(in srgb, #dc3545, transparent 70%);
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+}
+
+.contact-link {
+  color: var(--default-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .contact-form-section {
+    padding: 60px 0;
+  }
+  
+  .tattoo-order-form {
+    padding: 30px 20px;
+  }
+  
+  .btn-submit {
     width: 100%;
   }
 }
