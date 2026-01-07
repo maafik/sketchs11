@@ -607,7 +607,7 @@ function gtag_report_conversion(url) {
         const photo = photoInput.files[0];
 
         if (!name || !email || !idea) {
-          showMessage('Please fill in all required fields.', 'error');
+          showMessage('Пожалуйста, заполните все обязательные поля.', 'error');
           return;
         }
 
@@ -653,7 +653,7 @@ function gtag_report_conversion(url) {
           }
         })
         .then(() => {
-          showMessage('Thank you! Your request has been sent successfully. I will contact you soon!', 'success');
+          showMessage('Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время!', 'success');
           form.reset();
           
           // Google Ads conversion tracking
@@ -665,7 +665,7 @@ function gtag_report_conversion(url) {
         })
         .catch(error => {
           console.error('Error:', error);
-          showMessage('Sorry, there was an error sending your request. Please try again later.', 'error');
+          showMessage('Извините, произошла ошибка при отправке заявки. Попробуйте позже.', 'error');
         })
         .finally(() => {
           // Reset button state
