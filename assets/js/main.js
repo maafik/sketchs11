@@ -292,55 +292,6 @@ function updateTshirtOptions() {
   document.getElementById('tshirtDescription').style.display = design === 'custom' ? 'block' : 'none';
 }
 
-const orderFormEl = document.getElementById('orderForm');
-if (orderFormEl) orderFormEl.addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-
-  let text = "New order:\n";
-  for (const [key, value] of formData.entries()) {
-    if (value instanceof File || value === "") continue;
-    text += `${key}: ${value}\n`;
-  }
-
-  const token = "7349206398:AAEthCsuxGhjdrvUOnFwFD478q7y474kRMM";
-  const chatId = "5929919501";
-
-  try {
-    await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: "POST",
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: chatId, text })
-    });
-
-    const fileInputs = ['cupPhotos', 'tshirtPhotos'];
-    for (const name of fileInputs) {
-      const files = formData.getAll(name);
-      for (const file of files) {
-        if (file && file.name) {
-          const fileData = new FormData();
-          fileData.append("chat_id", chatId);
-          fileData.append("document", file);
-          await fetch(`https://api.telegram.org/bot${token}/sendDocument`, {
-            method: "POST",
-            body: fileData
-          });
-        }
-      }
-    }
-
-    document.getElementById('formContainer').innerHTML = `
-      <div style="text-align:center; padding: 30px;">
-        <h2>Thank you for your inquiry!</h2>
-        <p>For a faster response, write "+" in messenger:</p>
-        <p><a href="https://t.me/Irinasketchs?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%8D%D1%81%D0%BA%D0%B8%D0%B7." target="_blank">Telegram</a></p>
-      </div>
-    `;
-  } catch (error) {
-    alert("Sending error: " + error.message);
-  }
-});
 
 // Function to open form
 function openForm() {

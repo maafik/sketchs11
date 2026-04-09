@@ -396,13 +396,35 @@ function gtag_report_conversion(url) {
               <div class="mb-3">
                 <label for="idea" class="form-label">Describe Your Tattoo Idea *</label>
                 <textarea class="form-control" id="idea" name="idea" rows="5" required 
-                          placeholder="Tell me about your tattoo idea: style, size, placement, any specific elements you want..."></textarea>
+                          placeholder="Tell me about your tattoo idea: style, size, any specific elements you want..."></textarea>
               </div>
 
               <div class="mb-3">
-                <label for="photo" class="form-label">Attach Reference Photo (optional)</label>
-                <input type="file" class="form-control" id="photo" name="photo" accept="image/*" data-browse-on-browse-text="Choose file">
-                <small class="form-text text-secondary">You can attach a reference image to help me understand your idea better</small>
+                <label for="bodyPart" class="form-label">Body Part *</label>
+                <select class="form-control" id="bodyPart" name="bodyPart" required>
+                  <option value="">Select body part...</option>
+                  <option value="arm">Arm</option>
+                  <option value="forearm">Forearm</option>
+                  <option value="wrist">Wrist</option>
+                  <option value="shoulder">Shoulder</option>
+                  <option value="back">Back</option>
+                  <option value="chest">Chest</option>
+                  <option value="stomach">Stomach</option>
+                  <option value="leg">Leg</option>
+                  <option value="thigh">Thigh</option>
+                  <option value="calf">Calf</option>
+                  <option value="ankle">Ankle</option>
+                  <option value="neck">Neck</option>
+                  <option value="hand">Hand/Fingers</option>
+                  <option value="foot">Foot</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="photo" class="form-label">Attach Reference Photos (optional)</label>
+                <input type="file" class="form-control" id="photo" name="photo" accept="image/*" multiple data-browse-on-browse-text="Choose files">
+                <small class="form-text text-secondary">You can attach multiple reference images to help me understand your idea better</small>
               </div>
 
               <div class="text-center">
@@ -603,10 +625,11 @@ function gtag_report_conversion(url) {
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const idea = document.getElementById('idea').value.trim();
+        const bodyPart = document.getElementById('bodyPart').value;
         const photoInput = document.getElementById('photo');
-        const photo = photoInput.files[0];
+        const photos = photoInput.files;
 
-        if (!name || !email || !idea) {
+        if (!name || !email || !idea || !bodyPart) {
           showMessage('Please fill in all required fields.', 'error');
           return;
         }
@@ -615,12 +638,20 @@ function gtag_report_conversion(url) {
         submitText.style.display = 'none';
         submitLoading.style.display = 'inline';
         submitBtn.disabled = true;
+        
+        // Show progress for multiple photos
+        if (photos.length > 0) {
+          submitLoading.textContent = `Sending ${photos.length} photo${photos.length > 1 ? 's' : ''}...`;
+        }
 
         // Prepare message for Telegram
-        let telegramMessage = `🎨 *New Tattoo Order Request*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💭 *Idea:* ${idea}`;
+        let telegramMessage = `🎨 *New Tattoo Order Request*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n🦴 *Body Part:* ${bodyPart}\n💭 *Idea:* ${idea}`;
         
-        if (photo) {
-          telegramMessage += `\n📎 *File:* ${photo.name} (${(photo.size / 1024).toFixed(1)}KB)`;
+        if (photos.length > 0) {
+          telegramMessage += `\n📎 *Photos:* ${photos.length} file(s) attached`;
+          for (let i = 0; i < photos.length; i++) {
+            telegramMessage += `\n   • ${photos[i].name} (${(photos[i].size / 1024).toFixed(1)}KB)`;
+          }
         }
         
         // Send to Telegram
@@ -642,9 +673,9 @@ function gtag_report_conversion(url) {
         .then(response => response.json())
         .then(data => {
           if (data.ok) {
-            // If there's a photo, send it separately
-            if (photo && photo.size > 0) {
-              return sendPhotoToTelegram(photo, chatId);
+            // If there are photos, send them all
+            if (photos.length > 0) {
+              return sendAllPhotosToTelegram(photos, chatId);
             } else {
               return Promise.resolve();
             }
@@ -652,13 +683,24 @@ function gtag_report_conversion(url) {
             throw new Error('Failed to send message');
           }
         })
-        .then(() => {
-          showMessage('Successfully sent! We will contact you soon.', 'success');
+        .then(results => {
+          // Check if any photos failed
+          const failedPhotos = results.filter(result => 
+            result.status === 'rejected' || 
+            (result.value && result.value.ok === false)
+          );
+          
+          if (failedPhotos.length === 0) {
+            showMessage(`Successfully sent! All ${photos.length} photo${photos.length > 1 ? 's' : ''} delivered.`, 'success');
+          } else {
+            const successCount = photos.length - failedPhotos.length;
+            showMessage(`Partially sent! ${successCount}/${photos.length} photos delivered. We'll contact you soon.`, 'success');
+          }
           form.reset();
         })
         .catch(error => {
           console.error('Error:', error);
-          // Remove error message display
+          showMessage('Error sending message. Please try again or contact directly via Telegram.', 'error');
         })
         .finally(() => {
           // Reset button state
@@ -668,32 +710,53 @@ function gtag_report_conversion(url) {
         });
       });
 
-      function sendPhotoToTelegram(photo, chatId) {
-        if (!photo || photo.size === 0) {
-          return Promise.resolve();
+      function sendAllPhotosToTelegram(photos, chatId) {
+        const photoPromises = [];
+        const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB limit per photo
+        
+        for (let i = 0; i < photos.length; i++) {
+          const photo = photos[i];
+          if (photo && photo.size > 0) {
+            // Skip files larger than 10MB
+            if (photo.size > MAX_FILE_SIZE) {
+              console.warn(`Photo ${i + 1} is too large: ${(photo.size / 1024 / 1024).toFixed(1)}MB`);
+              continue;
+            }
+            
+            const formData = new FormData();
+            formData.append('chat_id', chatId);
+            formData.append('photo', photo);
+            formData.append('caption', `Reference photo ${i + 1} for tattoo order`);
+
+            const photoPromise = fetch(`https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendPhoto`, {
+              method: 'POST',
+              body: formData,
+              signal: AbortSignal.timeout(15000) // 15 second timeout per photo
+            })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              if (!data.ok) {
+                throw new Error(`Failed to send photo ${i + 1} to Telegram`);
+              }
+              return data;
+            })
+            .catch(error => {
+              console.error(`Error sending photo ${i + 1}:`, error);
+              // Don't fail the entire request if one photo fails
+              return { ok: false, error: error.message, photoIndex: i + 1 };
+            });
+            
+            photoPromises.push(photoPromise);
+          }
         }
         
-        const formData = new FormData();
-        formData.append('chat_id', chatId);
-        formData.append('photo', photo);
-        formData.append('caption', 'Reference photo for tattoo order');
-
-        return fetch(`https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendPhoto`, {
-          method: 'POST',
-          body: formData
-        })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          if (!data.ok) {
-            throw new Error('Failed to send photo to Telegram');
-          }
-          return data;
-        });
+        // Send all photos in parallel with faster resolution
+        return Promise.allSettled(photoPromises);
       }
 
       function showMessage(text, type) {
