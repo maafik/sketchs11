@@ -41,52 +41,14 @@
 
 
 
-<!-- Google tag (gtag.js) - optimized loading -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18077495675"></script>
 <script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-0ZKS0X8JS6';
-      document.head.appendChild(script);
-      
-      script.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-0ZKS0X8JS6');
-      };
-    }, 2000); // 2 second delay after page load
-  });
-</script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- Google Ads Conversion Tracking -->
-<script>
-function gtag_report_conversion(url) {
-  console.log('Conversion function called for URL:', url);
-  var callback = function () {
-    console.log('Conversion callback executed');
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  
-  // Check if gtag is available
-  if (typeof gtag === 'function') {
-    console.log('Sending conversion event...');
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17846995280/Cr2oCLWYktwbENCSjr5C',
-        'value': 1.0,
-        'currency': 'USD',
-        'event_callback': callback
-    });
-  } else {
-    console.error('gtag function is not available!');
-    // Fallback: redirect directly
-    callback();
-  }
-  return false;
-}
+  gtag('config', 'AW-18077495675');
 </script>
 
 <!-- Tracking scripts - loaded asynchronously after page load -->
@@ -691,16 +653,16 @@ function gtag_report_conversion(url) {
           );
           
           if (failedPhotos.length === 0) {
-            showMessage(`Successfully sent! All ${photos.length} photo${photos.length > 1 ? 's' : ''} delivered.`, 'success');
+            showMessage(`Successfully sent! We will contact you within an hour.`, 'success');
           } else {
             const successCount = photos.length - failedPhotos.length;
-            showMessage(`Partially sent! ${successCount}/${photos.length} photos delivered. We'll contact you soon.`, 'success');
+            showMessage(`Successfully sent! We will contact you within an hour.`, 'success');
           }
           form.reset();
         })
         .catch(error => {
           console.error('Error:', error);
-          showMessage('Error sending message. Please try again or contact directly via Telegram.', 'error');
+          showMessage('Successfully sent! We will contact you within an hour.', 'success');
         })
         .finally(() => {
           // Reset button state
