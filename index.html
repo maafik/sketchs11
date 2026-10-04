@@ -1,781 +1,408 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>lenasketch — Custom Tattoo Sketches</title>
-  <meta name="description" content="Professional custom tattoo sketches on commission. Unique designs developed specifically for you with your wishes and ideas in mind.">
-  <meta name="keywords" content="tattoo sketches, custom sketches, tattoo design, tattoos, tattoo artist">
-
-  <!-- DNS prefetch for external resources -->
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
-  <link rel="dns-prefetch" href="//www.googletagmanager.com">
-  <link rel="dns-prefetch" href="//mc.yandex.ru">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts - optimized -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Любимец — портрет вас с питомцем</title>
+  <meta name="description" content="Портреты собак и кошек в классических стилях. Загрузите фото, выберите стиль и оставьте заявку — превью бесплатно. Печать или цифровой файл.">
+  <meta name="theme-color" content="#1c120d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Любимец — портрет вас с питомцем">
+  <meta property="og:description" content="Выберите художественный стиль, оставьте заявку и получите бесплатное превью портрета питомца.">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cardo:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Cardo:wght@400;700&display=swap" rel="stylesheet"></noscript>
-
-  <!-- Critical CSS preload -->
-  <link rel="preload" href="assets/vendor/bootstrap/css/bootstrap.min.css" as="style">
-  <link rel="preload" href="assets/css/main.css?v=2.2" as="style">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css?v=2.2" rel="stylesheet">
-
-
-
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18077495675"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18077495675');
-</script>
-
-<!-- Tracking scripts - loaded asynchronously after page load -->
-
-  <!-- =======================================================
-  * Template Name: PhotoFolio
-  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
-
-<!-- Yandex.Metrika counter - optimized loading -->
-<script type="text/javascript">
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      (function(m,e,t,r,i,k,a){
-          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-          m[i].l=1*new Date();
-          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=105430483', 'ym');
-
-      ym(105430483, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-    }, 1500); // 1.5 second delay after page load
-  });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/105430483" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#contact-form">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">Любимец</a>
+      <nav class="nav" aria-label="Меню">
+        <a href="#styles">Портреты</a>
+        <a href="#how">Как это работает</a>
+        <a href="#order">Заказать</a>
+        <a href="#faq">Вопросы</a>
       </nav>
-
-      </div>
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильное меню">
+      <a href="#styles">Портреты</a>
+      <a href="#how">Как это работает</a>
+      <a href="#order">Заказать</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
   </header>
-  
-  <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-
+  <main id="top">
+    <section class="hero">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-delay="100">
-            <h2><span>Hi! My name is</span><span class="underlight">Lena,</span><span> I'm a tattoo sketch artist and designer.</span></h2>
-            <p>I create unique custom tattoo sketches that highlight your individuality. Each design is developed specifically for you with your wishes and ideas in mind. My goal is to create a sketch that is not only beautiful but also has special meaning for you.</p>
-            <div>
-              <a class="btn-get-started order-trigger" href="#contact-form">Order Your Sketch</a>
-            </div>
-            
-          </div>
+        <p class="kicker">Портреты собак и кошек по вашей фотографии</p>
+        <h1>Ваш питомец, <em>как на старинной картине.</em></h1>
+        <p class="lede">Выберите стиль и оставьте заявку — пришлём бесплатное превью.</p>
+        <p class="stars">★★★★★ Бесплатное превью · карта не нужна</p>
+        <div class="hero-cta">
+          <button class="btn btn-light" id="open-order-hero" type="button">Оставить заявку</button>
+          <a class="btn btn-ghost" href="#styles">Смотреть стили</a>
         </div>
-      </div>
-    </section><!-- /Hero Section -->
-    <section id="video-hero" class="video-hero" style="position: relative; height: 100vh; overflow: hidden;">
-      <video autoplay muted loop playsinline preload="metadata"
-        style="
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          height: 100%;
-          transform: translate(-50%, -50%);
-          object-fit: contain;
-          pointer-events: none;
-          user-select: none;
-        "
-        id="background-video"
-        oncontextmenu="return false;"
-        onselectstart="return false;"
-        ondragstart="return false;"
-      >
-        <source src="assets/vid/123.mp4" type="video/mp4">
-      </video>
-    </section>
-    
-    
-    <script>
-      // Load video after page load with delay
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          const video = document.getElementById("background-video");
-          if (video) {
-            video.load(); // Load video
-            video.playbackRate = 0.7; // Reduce video speed
-          }
-        }, 1000); // 1 second delay after page load
-      });
-    </script>
-
-    <!-- Handmade Section -->
-    <section class="section" style="padding: 60px 0; background: #0a0a0a;">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-lg-6">
-            <div class="handmade-image-wrapper">
-              <img id="handmadeImage" src="" alt="Handmade sketch work" class="img-fluid rounded" style="width: 100%; height: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.5);" draggable="false" oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="handmade-content">
-              <h3 style="color: #fff; font-size: 2rem; margin-bottom: 20px; font-weight: 700;">Every Detail — Handmade</h3>
-              <p style="color: #ccc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
-                Each sketch is drawn by hand — from the first line to the final stroke. I work through every detail to make the design harmonious and perfectly match your idea.
-              </p>
-              <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 200px;">
-                  <div style="color: #fff; font-weight: 600; margin-bottom: 8px;">✓ 100% handmade</div>
-                  <div style="color: #999; font-size: 0.9rem;">Every line created by hand</div>
-                </div>
-                <div style="flex: 1; min-width: 200px;">
-                  <div style="color: #fff; font-weight: 600; margin-bottom: 8px;">✓ Thoughtful details</div>
-                  <div style="color: #999; font-size: 0.9rem;">Every element coordinated with style</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="surprise">
+          <p class="kicker">21 стиль</p>
+          <button class="btn btn-light" id="surprise" type="button">Не знаете какой? Покажем случайный</button>
+          <p class="hint">Откроем пример из коллекции — его можно сразу заказать.</p>
         </div>
       </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="section" style="padding: 50px 0;">
-      <div class="container" data-aos="fade-up" data-aos-delay="80">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="pain-block">
-              <h3>Want a tattoo but afraid it won't turn out like in your head?</h3>
-              <p>I'll translate your idea into a ready sketch that the artist can immediately apply.</p>
-              <ul class="pain-bullets">
-                <li><span class="icon">✔</span><span>We'll discuss the idea, style, and size — no guessing or "what if it's not right".</span></li>
-                <li><span class="icon">✔</span><span>I'll prepare a clean sketch suitable for transfer to skin.</span></li>
-                <li><span class="icon">✔</span><span>I'll work on revisions until it's 100% perfect for you.</span></li>
-              </ul>
-              <div style="margin-top: 18px;">
-                <a class="btn-get-started order-trigger" href="#contact-form">Order Your Sketch</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="work" class="section work-process">
-      <div class="container" data-aos="fade-up" data-aos-delay="80">
-        <div class="section-title text-center">
-          <h2>Process</h2>
-          <p>How we work</p>
-        </div>
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-3 col-md-6">
-            <div class="work-step-card" data-aos="fade-up" data-aos-delay="100">
-              <div class="work-step-badge">1</div>
-              <div class="work-step-title">You describe the idea</div>
-              <div class="work-step-text">You write what you want, references/style/placement and size.</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="work-step-card" data-aos="fade-up" data-aos-delay="150">
-              <div class="work-step-badge">2</div>
-              <div class="work-step-title">I draw the sketch</div>
-              <div class="work-step-text">I gather the idea into a clean design ready for the artist.</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="work-step-card" data-aos="fade-up" data-aos-delay="200">
-              <div class="work-step-badge">3</div>
-              <div class="work-step-title">Revisions</div>
-              <div class="work-step-text">I refine until it's perfect so it "clicks" with you.</div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="work-step-card" data-aos="fade-up" data-aos-delay="250">
-              <div class="work-step-badge">4</div>
-              <div class="work-step-title">Ready for application</div>
-              <div class="work-step-text">I deliver the final in a format convenient for transfer to skin.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="section pricing-section">
-      <div class="container" data-aos="fade-up" data-aos-delay="80">
-        <div class="section-title text-center">
-          <h2>Prices</h2>
-          <p>Cost of sketches for different tasks</p>
-        </div>
-      </div>
-
-      <!-- Popular block for mobile -->
-      <div class="pricing-popular-mobile d-block d-md-none">
-        <div class="container" data-aos="fade-up" data-aos-delay="150">
-          <div class="pricing-item pricing-popular">
-            <span class="pricing-badge">Popular</span>
-            <h3 class="pricing-title">Standard</h3>
-            <div>
-              <div class="pricing-price">$75</div>
-              <p class="pricing-desc">Detailed work, complex compositions, medium tattoos</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="80">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4 col-md-6 d-none d-md-block">
-            <div class="pricing-item" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="pricing-title">Minimalism</h3>
-              <div>
-                <div class="pricing-price">$30</div>
-                <p class="pricing-desc">Simple shapes, black and white graphics, small tattoos</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-none d-md-block">
-            <div class="pricing-item pricing-popular" data-aos="fade-up" data-aos-delay="150">
-              <span class="pricing-badge">Popular</span>
-              <h3 class="pricing-title">Standard</h3>
-              <div>
-                <div class="pricing-price">$75</div>
-                <p class="pricing-desc">Detailed work, complex compositions, medium tattoos</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-none d-md-block">
-            <div class="pricing-item" data-aos="fade-up" data-aos-delay="200">
-              <h3 class="pricing-title">Realism</h3>
-              <div>
-                <div class="pricing-price">$95</div>
-                <p class="pricing-desc">Photorealistic details, tattoo sleeves, large and complex works</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mobile versions of other blocks -->
-          <div class="col-12 d-block d-md-none">
-            <div class="row gy-3">
-              <div class="col-12">
-                <div class="pricing-item" data-aos="fade-up" data-aos-delay="100">
-                  <h3 class="pricing-title">Minimalism</h3>
-                  <div>
-                    <div class="pricing-price">$30</div>
-                    <p class="pricing-desc">Simple shapes, black and white graphics, small tattoos</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12">
-                <div class="pricing-item" data-aos="fade-up" data-aos-delay="200">
-                  <h3 class="pricing-title">Realism</h3>
-                  <div>
-                    <div class="pricing-price">$95</div>
-                    <p class="pricing-desc">Photorealistic details, tattoo sleeves, large and complex works</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pricing-note text-center" data-aos="fade-up" data-aos-delay="250">
-          <p><strong>Don't know what to choose?</strong> <a href="#contact-form" class="order-trigger" style="color: var(--accent-color); text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 4px;">Write to me</a> — I'll help determine the style and budget for your idea</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact-form" class="section contact-form-section">
-      <div class="container" data-aos="fade-up" data-aos-delay="80">
-        <div class="section-title text-center">
-          <h2>Get Your Custom Tattoo Sketch</h2>
-          <p>Tell me about your idea and I'll create a unique design just for you</p>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <form id="tattooOrderForm" class="tattoo-order-form">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="name" class="form-label">Your Name *</label>
-                  <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="email" class="form-label">Email *</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-              </div>
-              
-              <div class="mb-3">
-                <label for="idea" class="form-label">Describe Your Tattoo Idea *</label>
-                <textarea class="form-control" id="idea" name="idea" rows="5" required 
-                          placeholder="Tell me about your tattoo idea: style, size, any specific elements you want..."></textarea>
-              </div>
-
-              <div class="mb-3">
-                <label for="bodyPart" class="form-label">Body Part *</label>
-                <select class="form-control" id="bodyPart" name="bodyPart" required>
-                  <option value="">Select body part...</option>
-                  <option value="arm">Arm</option>
-                  <option value="forearm">Forearm</option>
-                  <option value="wrist">Wrist</option>
-                  <option value="shoulder">Shoulder</option>
-                  <option value="back">Back</option>
-                  <option value="chest">Chest</option>
-                  <option value="stomach">Stomach</option>
-                  <option value="leg">Leg</option>
-                  <option value="thigh">Thigh</option>
-                  <option value="calf">Calf</option>
-                  <option value="ankle">Ankle</option>
-                  <option value="neck">Neck</option>
-                  <option value="hand">Hand/Fingers</option>
-                  <option value="foot">Foot</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="mb-3">
-                <label for="photo" class="form-label">Attach Reference Photos (optional)</label>
-                <input type="file" class="form-control" id="photo" name="photo" accept="image/*" multiple data-browse-on-browse-text="Choose files">
-                <small class="form-text text-secondary">You can attach multiple reference images to help me understand your idea better</small>
-              </div>
-
-              <div class="text-center">
-                <button type="submit" class="btn-submit">
-                  <span class="btn-submit-text">Send</span>
-                  <span class="btn-submit-loading" style="display: none;">Sending...</span>
-                </button>
-              </div>
-            </form>
-            
-            <div id="formMessage" class="form-message" style="display: none;"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery-4" class="section mfb-gallery">
-
-      <div class="mfb-gallery__bg" aria-hidden="true">
-        <div class="mfb-gallery__glow mfb-gallery__glow--1"></div>
-        <div class="mfb-gallery__glow mfb-gallery__glow--2"></div>
-        <div class="mfb-gallery__glow mfb-gallery__glow--3"></div>
-
-        <div class="mfb-gallery__corner mfb-gallery__corner--tl"></div>
-        <div class="mfb-gallery__corner mfb-gallery__corner--tr"></div>
-        <div class="mfb-gallery__corner mfb-gallery__corner--bl"></div>
-        <div class="mfb-gallery__corner mfb-gallery__corner--br"></div>
-      </div>
-
-      <div class="container mfb-gallery__container">
-        <div class="mfb-gallery__header">
-          <h2 class="mfb-gallery__title">My Works</h2>
-          <p class="mfb-gallery__subtitle">Each work — a unique story</p>
-        </div>
-
-        <div class="mfb-gallery__main">
-          <button class="mfb-gallery__nav mfb-gallery__nav--prev" type="button" aria-label="Previous work">
-            <span class="mfb-gallery__nav-glow" aria-hidden="true"></span>
-            <svg class="mfb-gallery__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m15 18-6-6 6-6" />
-            </svg>
+    <section class="section dark" id="styles">
+      <div class="container">
+        <h2>Мастерская стилей</h2>
+        <p class="sub">Классические портреты: только питомец или вы вдвоём. Нажмите карточку, чтобы посмотреть пример и заказать такой же.</p>
+        <div class="styles">
+          <button class="style-card" data-style-id="cushion" data-style='{"id":"cushion","name":"Королевская подушка","blurb":"Бархатная подушка, горностай, грозовое небо.","cover":"./ps-royal-cushion.jpg"}'>
+            <img alt="Стиль Королевская подушка" src="./ps-royal-cushion.jpg" loading="lazy">
+            <h3>Королевская подушка</h3>
+            <p>Бархат, горностай, тёмное небо</p>
           </button>
-
-          <div class="mfb-phone" aria-live="polite">
-            <div class="mfb-phone__glow" aria-hidden="true"></div>
-            <div class="mfb-phone__frame">
-              <div class="mfb-phone__bezel">
-                <div class="mfb-phone__notch" aria-hidden="true"></div>
-                <div class="mfb-phone__screen">
-                  <img id="mfbGalleryImage" class="mfb-phone__img" src="assets/img/gallery/gallery-1.jpg" alt="Geometric Wolf Head" loading="lazy" draggable="false" oncontextmenu="return false;">
-                  <div class="mfb-phone__overlay" aria-hidden="true"></div>
-                  <div class="mfb-phone__title-wrap">
-                    <h3 id="mfbGalleryTitle" class="mfb-phone__title">Geometric Wolf Head</h3>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mfb-phone__btn mfb-phone__btn--r1" aria-hidden="true"></div>
-              <div class="mfb-phone__btn mfb-phone__btn--r2" aria-hidden="true"></div>
-              <div class="mfb-phone__btn mfb-phone__btn--l" aria-hidden="true"></div>
-            </div>
-          </div>
-
-          <button class="mfb-gallery__nav mfb-gallery__nav--next" type="button" aria-label="Next work">
-            <span class="mfb-gallery__nav-glow" aria-hidden="true"></span>
-            <svg class="mfb-gallery__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="m9 18 6-6-6-6" />
-            </svg>
+          <button class="style-card" data-style-id="officer" data-style='{"id":"officer","name":"Офицер","blurb":"Парадный мундир, шёлковые драпировки, открытое небо.","cover":"./ps-the-officer.jpg"}'>
+            <img alt="Стиль Офицер" src="./ps-the-officer.jpg" loading="lazy">
+            <h3>Офицер</h3>
+            <p>Мундир, шёлк, открытое небо</p>
+          </button>
+          <button class="style-card" data-style-id="rococo" data-style='{"id":"rococo","name":"Шёлк рококо","blurb":"Голубой шёлк, розовый бархат, жемчуг.","cover":"./ps-rococo-silk.jpg"}'>
+            <img alt="Стиль Шёлк рококо" src="./ps-rococo-silk.jpg" loading="lazy">
+            <h3>Шёлк рококо</h3>
+            <p>Шёлк, бархат, жемчуг</p>
+          </button>
+          <button class="style-card" data-style-id="muse" data-style='{"id":"muse","name":"Садовая муза","blurb":"Цветы в волосах, питомец на руках.","cover":"./ps-garden-muse.jpg"}'>
+            <img alt="Стиль Садовая муза" src="./ps-garden-muse.jpg" loading="lazy">
+            <h3>Садовая муза</h3>
+            <p>Цветы в волосах, питомец рядом</p>
+          </button>
+          <button class="style-card" data-style-id="crimson" data-style='{"id":"crimson","name":"Багровый двор","blurb":"Бордовый бархат, золото, горностай.","cover":"./ps-crimson-court.jpg"}'>
+            <img alt="Стиль Багровый двор" src="./ps-crimson-court.jpg" loading="lazy">
+            <h3>Багровый двор</h3>
+            <p>Бордовый бархат и золото</p>
+          </button>
+          <button class="style-card" data-style-id="feline" data-style='{"id":"feline","name":"Кошачье величество","blurb":"Парчовая мантия, кружевной воротник, тосканский пейзаж.","cover":"./ps-feline-majesty.jpg"}'>
+            <img alt="Стиль Кошачье величество" src="./ps-feline-majesty.jpg" loading="lazy">
+            <h3>Кошачье величество</h3>
+            <p>Мантия, кружево, небо</p>
+          </button>
+          <button class="style-card" data-style-id="silk" data-style='{"id":"silk","name":"Шёлк и небо","blurb":"Бархатный жакет, питомец на руках.","cover":"./ps-silk-and-sky.jpg"}'>
+            <img alt="Стиль Шёлк и небо" src="./ps-silk-and-sky.jpg" loading="lazy">
+            <h3>Шёлк и небо</h3>
+            <p>Жакет, драпировка, объятия</p>
+          </button>
+          <button class="style-card" data-style-id="noble" data-style='{"id":"noble","name":"Благородный","blurb":"Голова и грудь, тёмный классический фон.","cover":"./ps-the-noble.jpg"}'>
+            <img alt="Стиль Благородный" src="./ps-the-noble.jpg" loading="lazy">
+            <h3>Благородный</h3>
+            <p>Классический тёмный фон</p>
+          </button>
+          <button class="style-card" data-style-id="lace" data-style='{"id":"lace","name":"Бархат и кружево","blurb":"Зелёный камзол, кружевное жабо.","cover":"./ps-velvet-and-lace.jpg"}'>
+            <img alt="Стиль Бархат и кружево" src="./ps-velvet-and-lace.jpg" loading="lazy">
+            <h3>Бархат и кружево</h3>
+            <p>Зелёный камзол, питомец на руках</p>
+          </button>
+          <button class="style-card" data-style-id="autumn" data-style='{"id":"autumn","name":"Осенняя усадьба","blurb":"Красный бархат, осенние деревья, замок.","cover":"./ps-autumn-estate.jpg"}'>
+            <img alt="Стиль Осенняя усадьба" src="./ps-autumn-estate.jpg" loading="lazy">
+            <h3>Осенняя усадьба</h3>
+            <p>Бархат, парк и замок</p>
+          </button>
+          <button class="style-card" data-style-id="duchess" data-style='{"id":"duchess","name":"Герцогиня","blurb":"Бордовый бархат, горностай, золотая цепь.","cover":"./ps-the-duchess.jpg"}'>
+            <img alt="Стиль Герцогиня" src="./ps-the-duchess.jpg" loading="lazy">
+            <h3>Герцогиня</h3>
+            <p>Бархат, мантия, золото</p>
+          </button>
+          <button class="style-card" data-style-id="throne" data-style='{"id":"throne","name":"Позолоченный трон","blurb":"Золотое кресло, синяя мантия, маленькая корона.","cover":"./ps-gilded-throne.jpg"}'>
+            <img alt="Стиль Позолоченный трон" src="./ps-gilded-throne.jpg" loading="lazy">
+            <h3>Позолоченный трон</h3>
+            <p>Кресло, мантия, корона</p>
+          </button>
+          <button class="style-card" data-style-id="library" data-style='{"id":"library","name":"Учёный","blurb":"Кожаное кресло, книги и камин.","cover":"./ps-the-scholar.jpg"}'>
+            <img alt="Стиль Учёный" src="./ps-the-scholar.jpg" loading="lazy">
+            <h3>Учёный</h3>
+            <p>Библиотека и кресло</p>
+          </button>
+          <button class="style-card" data-style-id="kittens" data-style='{"id":"kittens","name":"Котята на отдыхе","blurb":"Кошки на старом деревянном столе, мягкий тёплый свет.","cover":"./ps-kittens-at-rest.jpg"}'>
+            <img alt="Стиль Котята на отдыхе" src="./ps-kittens-at-rest.jpg" loading="lazy">
+            <h3>Котята на отдыхе</h3>
+            <p>Кошки, деревянный стол, тёплый фон</p>
+          </button>
+          <button class="style-card" data-style-id="regency" data-style='{"id":"regency","name":"Джентльмен Регентства","blurb":"Тёмный сюртук, красное кресло, вечерний парк.","cover":"./ps-regency-gentleman.jpg"}'>
+            <img alt="Стиль Джентльмен Регентства" src="./ps-regency-gentleman.jpg" loading="lazy">
+            <h3>Джентльмен Регентства</h3>
+            <p>Сюртук, кресло, вечерний парк</p>
+          </button>
+          <button class="style-card" data-style-id="garden" data-style='{"id":"garden","name":"Летний сад","blurb":"Импрессионизм, солнечные цветы.","cover":"./ps-summer-garden.jpg"}'>
+            <img alt="Стиль Летний сад" src="./ps-summer-garden.jpg" loading="lazy">
+            <h3>Летний сад</h3>
+            <p>Свет, цветы, воздух</p>
+          </button>
+          <button class="style-card" data-style-id="pair" data-style='{"id":"pair","name":"Королевская пара","blurb":"Двое питомцев в бархатных мантиях на золотой подушке.","cover":"./ps-royal-pair.jpg"}'>
+            <img alt="Стиль Королевская пара" src="./ps-royal-pair.jpg" loading="lazy">
+            <h3>Королевская пара</h3>
+            <p>Две мантии, золотая подушка</p>
+          </button>
+          <button class="style-card" data-style-id="country" data-style='{"id":"country","name":"Загородный джентльмен","blurb":"Зелёный сюртук, старый дуб, английский пейзаж.","cover":"./ps-country-gentleman.jpg"}'>
+            <img alt="Стиль Загородный джентльмен" src="./ps-country-gentleman.jpg" loading="lazy">
+            <h3>Загородный джентльмен</h3>
+            <p>Сюртук, дуб, прогулка</p>
+          </button>
+          <button class="style-card" data-style-id="hearth" data-style='{"id":"hearth","name":"Зимний очаг","blurb":"Камин, гирлянда и свет свечей.","cover":"./ps-winter-hearth.jpg"}'>
+            <img alt="Стиль Зимний очаг" src="./ps-winter-hearth.jpg" loading="lazy">
+            <h3>Зимний очаг</h3>
+            <p>Камин и тёплый свет</p>
+          </button>
+          <button class="style-card" data-style-id="fireside" data-style='{"id":"fireside","name":"Вечер у камина","blurb":"Твидовый костюм, кожаное кресло, огонь в камине.","cover":"./ps-fireside-evening.jpg"}'>
+            <img alt="Стиль Вечер у камина" src="./ps-fireside-evening.jpg" loading="lazy">
+            <h3>Вечер у камина</h3>
+            <p>Твид, кресло, огонь</p>
+          </button>
+          <button class="style-card" data-style-id="sofa" data-style='{"id":"sofa","name":"Дневной диван","blurb":"Цветочный диван, мягкий дневной свет.","cover":"./ps-afternoon-sofa.jpg"}'>
+            <img alt="Стиль Дневной диван" src="./ps-afternoon-sofa.jpg" loading="lazy">
+            <h3>Дневной диван</h3>
+            <p>Диван и дневной свет</p>
           </button>
         </div>
+      </div>
+    </section>
 
-        <div class="mfb-gallery__dots" id="mfbGalleryDots" aria-label="Work navigation"></div>
-
-        <div class="mfb-gallery__desc">
-          <p class="mfb-gallery__desc-label">Work description:</p>
-          <p class="mfb-gallery__desc-text">«<span id="mfbGalleryDescription">Wolf head created using clear geometric shapes and sharp lines emphasizing the wildness of the image</span>»</p>
-        </div>
-
-        <div class="mfb-gallery__cta">
-          <div class="mfb-cta">
-            <img class="mfb-cta__avatar" src="assets/img/profile-img.png" alt="Lena" loading="lazy">
-            <div class="mfb-cta__body">
-              <div class="mfb-cta__title">Want to know the price?</div>
-              <div class="mfb-cta__text">Write to me — I'll respond and help choose the idea</div>
-            </div>
-            <a class="mfb-cta__btn" href="#contact-form">Contact me</a>
-          </div>
+    <section class="section" id="how">
+      <div class="container">
+        <h2>Память в трёх шагах</h2>
+        <p class="sub">Сначала вы видите готовый портрет. Потом решаете, заказывать ли его.</p>
+        <div class="steps">
+          <article class="step">
+            <span>Шаг 1</span>
+            <h3>Добавьте фото</h3>
+            <p>Только питомец или вы вместе. Подойдёт один общий снимок или до трёх отдельных.</p>
+          </article>
+          <article class="step">
+            <span>Шаг 2</span>
+            <h3>Смотрите превью бесплатно</h3>
+            <p>Оставьте заявку, и мы пришлём превью. Не зашло? Выберите другой стиль или попросите правку.</p>
+          </article>
+          <article class="step">
+            <span>Шаг 3</span>
+            <h3>Оставьте как хотите</h3>
+            <p>Художественная печать под стандартную раму, деревянный блок или цифровой файл.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-    </section><!-- /Gallery Section -->
+    <section class="section dark" id="order">
+      <div class="container">
+        <h2>Оставьте портрет у себя</h2>
+        <p class="sub">Начните с бесплатного превью. Выберите формат и оставьте заявку — формат можно поменять после того, как увидите картину.</p>
+        <div class="products">
+          <article class="product" data-format="Художественная печать">
+            <h3>Художественная печать</h3>
+            <p>Архивная бумага и стойкие чернила. Размеры под обычные рамки: 20×25, 30×40, 40×50 см.</p>
+            <p class="price">от 4 900 ₽</p>
+            <button class="btn btn-light product-pick" type="button">Выбрать</button>
+          </article>
+          <article class="product" data-format="Деревянный блок">
+            <h3>Деревянный блок</h3>
+            <p>Печать на берёзе. Можно повесить или поставить на стол. Цифровой файл в комплекте.</p>
+            <p class="price">от 3 900 ₽</p>
+            <button class="btn btn-light product-pick" type="button">Выбрать</button>
+          </article>
+          <article class="product" data-format="Цифровой портрет">
+            <h3>Цифровой портрет</h3>
+            <p>Файл 4K, чтобы сохранить, отправить или напечатать самим.</p>
+            <p class="price">1 490 ₽</p>
+            <button class="btn btn-light product-pick" type="button">Выбрать</button>
+          </article>
+        </div>
 
-    
+        <div class="order-cta">
+          <button class="btn btn-gold" id="open-order" type="button">Оставить заявку</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Семьи уже вешают их дома</h2>
+        <div class="reviews">
+          <article class="review">
+            <p>★★★★★</p>
+            <p>«Получилось очень похоже на нашего Барсика. Повесили в гостиной — гости сразу подходят.»</p>
+            <p><strong>Анна</strong> · Москва</p>
+          </article>
+          <article class="review">
+            <p>★★★★★</p>
+            <p>«Дарили маме на день рождения. Она плакала от радости. Качество печати отличное.»</p>
+            <p><strong>Игорь</strong> · Санкт-Петербург</p>
+          </article>
+          <article class="review">
+            <p>★★★★★</p>
+            <p>«Сначала сомневались, но превью убедило. Заказали блок на стол — выглядит дорого.»</p>
+            <p><strong>Мария</strong> · Казань</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>Частые вопросы</h2>
+        <div class="faq">
+          <details open>
+            <summary>Можно ли быть на портрете вместе с питомцем?</summary>
+            <p>Да. Загрузите общее фото или отдельные снимки вас и животного. Нарисуем тех, кто есть на фотографиях.</p>
+          </details>
+          <details>
+            <summary>Подойдёт ли фото кошки?</summary>
+            <p>Да. Есть стили специально для кошек, и любой другой стиль тоже работает.</p>
+          </details>
+          <details>
+            <summary>Какие фото получаются лучше всего?</summary>
+            <p>Морда к камере, оба глаза видны, свет без вспышки. Селфи нормально. Без очков, шапок, сильных фильтров и сильной смазанности.</p>
+          </details>
+          <details>
+            <summary>Как делается портрет?</summary>
+            <p>Портрет создаётся в выбранном стиле по вашим фото. Превью бесплатное: посмотрите его внимательно, прежде чем заказывать, и попросите правки, если что-то не так.</p>
+          </details>
+          <details>
+            <summary>Что бесплатно и когда платить?</summary>
+            <p>Превью бесплатно, карта не нужна. Платите только если заказываете печать, блок или файл.</p>
+          </details>
+          <details>
+            <summary>Подойдёт ли печать в обычную рамку?</summary>
+            <p>Да. Стандартные размеры, архивная бумага.</p>
+          </details>
+          <details>
+            <summary>Что происходит с моими фото?</summary>
+            <p>Они нужны только чтобы написать портрет. Мы не публикуем их и не используем в рекламе.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Готовы увидеть портрет до заказа?</h2>
+        <p class="sub">Бесплатное превью. Без карты.</p>
+        <button class="btn btn-light" id="open-order-cta" type="button">Оставить заявку</button>
+      </div>
+    </section>
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p class="copyright">© <span>Lena</span> <strong class="px-1 sitename">lenasketch</strong> <span>All rights reserved</span></p>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-      <a href="#contact-form" class="order-trigger">Order Your Sketch</a>
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Order Modal -->
-  <div class="order-modal" id="orderModal">
-    <div class="order-modal__dialog">
-      <button class="order-modal__close" type="button" aria-label="Close">✕</button>
-      <div class="order-modal__title">Let's create your unique tattoo sketch together</div>
-      <div class="order-modal__text">
-        Write to me right now, and I'll develop an original sketch for your style and body placement.
-        2 revisions free, ready in 48 hours. Your idea — my design!
-      </div>
-      <div class="order-modal__actions">
-        <a class="order-modal__btn order-modal__btn--tg" href="#contact-form">Contact Form</a>
-      </div>
-
-      <div class="order-carousel">
-        <span class="order-carousel__label">Opens in new window</span>
-        <div class="order-carousel__viewport">
-          <div class="order-carousel__track" id="orderCarouselTrack">
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-54 (1).jpg" alt="Sketch 1" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-55 (1).jpg" alt="Sketch 2" loading="lazy" oncontextmenu="return false;" draggable="false">
-              <img src="assets/123/photo_2025-07-03_23-08-55 (2) (1).jpg" alt="Sketch 3" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-55 (3) (1).jpg" alt="Sketch 4" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-56 (1).jpg" alt="Sketch 5" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-56 (2) (1).jpg" alt="Sketch 6" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-56 (3) (1).jpg" alt="Sketch 7" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-            <div class="order-carousel__item">
-              <img src="assets/123/photo_2025-07-03_23-08-56 (4) (1).jpg" alt="Sketch 8" loading="lazy" oncontextmenu="return false;" draggable="false">
-            </div>
-          </div>
-          <div class="order-carousel__nav">
-            <button class="order-carousel__arrow order-carousel__arrow--prev" type="button" data-dir="-1">‹</button>
-            <button class="order-carousel__arrow order-carousel__arrow--next" type="button" data-dir="1">›</button>
-          </div>
+  <div class="studio" id="studio" role="dialog" aria-modal="true" aria-labelledby="result-title" aria-hidden="true">
+    <div class="studio-card">
+      <button class="close-x" id="close-studio" type="button" aria-label="Закрыть">×</button>
+      <div class="frame">
+        <div class="result-art" id="result-stage">
+          <img id="result-image" alt="Пример стиля">
         </div>
-        <small>Work examples</small>
+      </div>
+      <div class="studio-side">
+        <p class="kicker">Пример стиля</p>
+        <h2 id="result-title">Стиль</h2>
+        <p id="result-desc"></p>
+        <p>Понравился стиль? Оставьте заявку — по вашему фото мы сделаем такой же портрет и пришлём бесплатное превью.</p>
+        <div class="studio-actions">
+          <button class="btn btn-gold" id="studio-order" type="button">Заказать в этом стиле</button>
+          <button class="btn btn-light" id="next-style" type="button">Другой стиль</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div class="studio order-modal" id="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-title" aria-hidden="true">
+    <div class="order-card">
+      <button class="close-x" id="close-order" type="button" aria-label="Закрыть">×</button>
 
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="line"></div>
+      <div id="price-step">
+        <h2 id="order-title">Выберите формат</h2>
+        <p class="form-lead">Сначала выберите, как хотите получить портрет. Дальше заполните заявку.</p>
+        <div class="price-picks">
+          <button class="price-pick" type="button" data-format="Художественная печать" data-price="от 4 900 ₽">
+            <h3>Художественная печать</h3>
+            <p>Архивная бумага, размеры под обычную раму.</p>
+            <span>от 4 900 ₽</span>
+          </button>
+          <button class="price-pick" type="button" data-format="Деревянный блок" data-price="от 3 900 ₽">
+            <h3>Деревянный блок</h3>
+            <p>Печать на берёзе. Можно повесить или поставить.</p>
+            <span>от 3 900 ₽</span>
+          </button>
+          <button class="price-pick" type="button" data-format="Цифровой портрет" data-price="1 490 ₽">
+            <h3>Цифровой портрет</h3>
+            <p>Файл 4K — сохранить, отправить или напечатать самим.</p>
+            <span>1 490 ₽</span>
+          </button>
+        </div>
+      </div>
+
+      <form class="order-form" id="order-form" hidden novalidate>
+        <h2>Оставить заявку</h2>
+        <p class="form-lead">Ответим в мессенджере или по телефону и пришлём бесплатное превью.</p>
+        <div class="style-chip" id="order-format-chip">
+          <span>Формат: <strong id="order-format-name"></strong> · <em id="order-format-price"></em></span>
+          <button class="btn btn-light btn-tiny" id="change-format" type="button">Изменить</button>
+        </div>
+        <div class="style-chip" id="order-style-chip" hidden>
+          <img id="order-style-img" alt="">
+          <span>Стиль: <strong id="order-style-name"></strong></span>
+        </div>
+        <div class="form-grid">
+          <label class="field">
+            <span>Ваше имя</span>
+            <input name="name" type="text" required maxlength="80" autocomplete="name">
+          </label>
+          <label class="field">
+            <span>Как связаться</span>
+            <input name="contact" type="text" required maxlength="120" autocomplete="tel" placeholder="Номер MAX или username Telegram">
+            <small>Введите номер MAX или username Telegram</small>
+          </label>
+          <label class="field wide">
+            <span>Стиль</span>
+            <select name="style" id="order-style">
+              <option value="Подберите за меня">Подберите за меня</option>
+            </select>
+          </label>
+          <input type="hidden" name="format" id="order-format">
+          <input type="hidden" name="price" id="order-price">
+          <div class="field wide">
+            <span>Фото (до 3)</span>
+            <div class="order-photos">
+              <div class="previews previews-left" data-previews></div>
+              <button class="file-btn" type="button" id="order-add-photo">Добавить фото</button>
+              <input id="photos-order" type="file" accept="image/*" multiple hidden>
+            </div>
+            <p class="photo-msg" data-photo-msg role="status" aria-live="polite"></p>
+          </div>
+          <label class="field wide">
+            <span>Комментарий <small>(необязательно)</small></span>
+            <textarea name="comment" rows="3" maxlength="1000" placeholder="Например: хочу, чтобы кот был в короне"></textarea>
+          </label>
+        </div>
+        <input class="hp" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          <span>Согласен на обработку персональных данных для связи по заявке</span>
+        </label>
+        <button class="btn btn-gold btn-wide" type="submit" id="order-submit">Отправить</button>
+        <p class="form-note" id="order-note" role="status" aria-live="polite"></p>
+      </form>
+      <div class="order-success" id="order-success" hidden>
+        <h2>Заявка отправлена</h2>
+        <p>Спасибо! Мы свяжемся с вами в ближайшее время и пришлём бесплатное превью.</p>
+        <button class="btn btn-gold" id="order-done" type="button">Готово</button>
+      </div>
+    </div>
   </div>
 
-  <!-- Critical JS preload -->
-  <link rel="preload" href="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" as="script">
-  <link rel="preload" href="assets/vendor/aos/aos.js" as="script">
-  <link rel="preload" href="assets/js/main.js?v=2.2" as="script">
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
-  <script src="assets/vendor/php-email-form/validate.js" defer></script>
-  <script src="assets/vendor/aos/aos.js" defer></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js?v=2.2" defer></script>
-
-  <!-- Telegram Form Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('tattooOrderForm');
-      const submitBtn = form.querySelector('.btn-submit');
-      const submitText = submitBtn.querySelector('.btn-submit-text');
-      const submitLoading = submitBtn.querySelector('.btn-submit-loading');
-      const formMessage = document.getElementById('formMessage');
-
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const idea = document.getElementById('idea').value.trim();
-        const bodyPart = document.getElementById('bodyPart').value;
-        const photoInput = document.getElementById('photo');
-        const photos = photoInput.files;
-
-        if (!name || !email || !idea || !bodyPart) {
-          showMessage('Please fill in all required fields.', 'error');
-          return;
-        }
-
-        // Show loading state
-        submitText.style.display = 'none';
-        submitLoading.style.display = 'inline';
-        submitBtn.disabled = true;
-        
-        // Show progress for multiple photos
-        if (photos.length > 0) {
-          submitLoading.textContent = `Sending ${photos.length} photo${photos.length > 1 ? 's' : ''}...`;
-        }
-
-        // Prepare message for Telegram
-        let telegramMessage = `🎨 *New Tattoo Order Request*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n🦴 *Body Part:* ${bodyPart}\n💭 *Idea:* ${idea}`;
-        
-        if (photos.length > 0) {
-          telegramMessage += `\n📎 *Photos:* ${photos.length} file(s) attached`;
-          for (let i = 0; i < photos.length; i++) {
-            telegramMessage += `\n   • ${photos[i].name} (${(photos[i].size / 1024).toFixed(1)}KB)`;
-          }
-        }
-        
-        // Send to Telegram
-        const telegramUrl = `https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendMessage`;
-        const chatId = '1076512275';
-        
-        // First send text message
-        fetch(telegramUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: telegramMessage,
-            parse_mode: 'Markdown'
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.ok) {
-            // If there are photos, send them all
-            if (photos.length > 0) {
-              return sendAllPhotosToTelegram(photos, chatId);
-            } else {
-              return Promise.resolve();
-            }
-          } else {
-            throw new Error('Failed to send message');
-          }
-        })
-        .then(results => {
-          // Check if any photos failed
-          const failedPhotos = results.filter(result => 
-            result.status === 'rejected' || 
-            (result.value && result.value.ok === false)
-          );
-          
-          if (failedPhotos.length === 0) {
-            showMessage(`Successfully sent! We will contact you within an hour.`, 'success');
-          } else {
-            const successCount = photos.length - failedPhotos.length;
-            showMessage(`Successfully sent! We will contact you within an hour.`, 'success');
-          }
-          form.reset();
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          showMessage('Successfully sent! We will contact you within an hour.', 'success');
-        })
-        .finally(() => {
-          // Reset button state
-          submitText.style.display = 'inline';
-          submitLoading.style.display = 'none';
-          submitBtn.disabled = false;
-        });
-      });
-
-      function sendAllPhotosToTelegram(photos, chatId) {
-        const photoPromises = [];
-        const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB limit per photo
-        
-        for (let i = 0; i < photos.length; i++) {
-          const photo = photos[i];
-          if (photo && photo.size > 0) {
-            // Skip files larger than 10MB
-            if (photo.size > MAX_FILE_SIZE) {
-              console.warn(`Photo ${i + 1} is too large: ${(photo.size / 1024 / 1024).toFixed(1)}MB`);
-              continue;
-            }
-            
-            const formData = new FormData();
-            formData.append('chat_id', chatId);
-            formData.append('photo', photo);
-            formData.append('caption', `Reference photo ${i + 1} for tattoo order`);
-
-            const photoPromise = fetch(`https://api.telegram.org/bot8259369712:AAGW6-aQ8Nw7fDnjBWuFDWIRnORL8dZ2zsM/sendPhoto`, {
-              method: 'POST',
-              body: formData,
-              signal: AbortSignal.timeout(15000) // 15 second timeout per photo
-            })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              return response.json();
-            })
-            .then(data => {
-              if (!data.ok) {
-                throw new Error(`Failed to send photo ${i + 1} to Telegram`);
-              }
-              return data;
-            })
-            .catch(error => {
-              console.error(`Error sending photo ${i + 1}:`, error);
-              // Don't fail the entire request if one photo fails
-              return { ok: false, error: error.message, photoIndex: i + 1 };
-            });
-            
-            photoPromises.push(photoPromise);
-          }
-        }
-        
-        // Send all photos in parallel with faster resolution
-        return Promise.allSettled(photoPromises);
-      }
-
-      function showMessage(text, type) {
-        formMessage.textContent = text;
-        formMessage.className = `form-message form-message--${type}`;
-        formMessage.style.display = 'block';
-        
-        // Auto hide after 5 seconds
-        setTimeout(() => {
-          formMessage.style.display = 'none';
-        }, 5000);
-      }
-    });
-  </script>
-
-  <!-- Tracking scripts - loaded after page load for better performance -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        // Load image with 1 second delay
-        const handmadeImage = document.getElementById("handmadeImage");
-        if (handmadeImage) {
-          handmadeImage.src = "assets/img/gallery/123123123.jpg";
-        }
-        
-        // Top.Mail.Ru counter - DISABLED for performance
-        /*
-        var _tmr = window._tmr || (window._tmr = []);
-        _tmr.push({id: "3636165", type: "pageView", start: (new Date()).getTime()});
-        (function (d, w, id) {
-          if (d.getElementById(id)) return;
-          var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
-          ts.src = "https://top-fwz1.mail.ru/js/code.js";
-          var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
-          if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
-        })(document, window, "tmr-code");
-        */
-
-        // TikTok Pixel Code - DISABLED for performance
-        /*
-        !function (w, d, t) {
-          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-          var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-          ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-          
-            ttq.load('D0GA8H3C77U9TS4J8B10');
-            ttq.page();
-          }(window, document, 'ttq');
-        */
-      }, 1000); // Minimum delay for future scripts
-    });
-  </script>
-  <!-- Top.Mail.Ru noscript - DISABLED for performance -->
-  <!-- <noscript>
-    <div><img src="https://top-fwz1.mail.ru/counter?id=3636165;js=na" style="position:absolute;left:-9999px;" alt="Top.Mail.Ru" /></div>
-  </noscript> -->
-
+  <footer class="container footer">
+    <span>Любимец · портреты питомцев</span>
+    <span>Превью бесплатно · карта не нужна</span>
+  </footer>
+  <script src="./js/config.js"></script>
+  <script src="./js/main.js"></script>
 </body>
-
 </html>
